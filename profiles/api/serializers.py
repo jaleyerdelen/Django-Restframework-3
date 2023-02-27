@@ -9,7 +9,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = "__all__"
 
-class ProfilePhotoSerializer(serializers.ModelSerial):
+class ProfilePhotoSerializer(serializers.ModelSerializer):
     model = Profile
     fields = ["photo"]
 
