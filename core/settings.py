@@ -41,7 +41,16 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'rest_framework.authtoken',
-    'dj_rest_auth'
+    'dj_rest_auth',
+    ###registration
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+     #dj-rest-auth kütüphanesinden aldık, django-allauth kütüphanesi ile birlikte çalışacak. rest-auth allauth'u kullanıyor bu uygulama için
+    'dj_rest_auth.registration',
+    
+
 ]
 
 MIDDLEWARE = [
@@ -132,7 +141,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
    'DEFAULT_AUTHENTICATION_CLASSES': (
-       'rest_framework.authentication.TokenAuthentication',
+       'rest_framework.authentication.TokenAuthentication', #token ile istek yapmak için
        'rest_framework.authentication.SessionAuthentication', #web kısmında görüntüleyebilmek için
    ),
 }
+
+##Kayıt işlemleri için
+SITE_ID = 1
+
+ACCOUNT_EMAİL_VERIFICATION = "none"
+ACCOUNT_EMAİL_REQUİRED = (True,)
