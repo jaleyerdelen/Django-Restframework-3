@@ -3,10 +3,10 @@ from pprint import pprint
 
 def client():
     credentials = {
-        "username":"jaletest",
-        "email":"jale@test.com",
-        "password1":"test12345",
-        "password2":"test12345",
+        "username":"jaeletest",
+        "email":"jaele@test.com",
+        "password1":"teest12345",
+        "password2":"teest12345",
     }
 
     response = requests.post(
