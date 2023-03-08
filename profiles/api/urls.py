@@ -1,5 +1,5 @@
 from django.urls import path, include
-from profiles.api.views import ProfileViewSet, ProfileStatusViewSet
+from profiles.api.views import ProfileViewSet, ProfileStatusViewSet, ProfilePhotoUpdateView
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -8,6 +8,7 @@ router.register(r"status", ProfileStatusViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("profile-photo/", ProfilePhotoUpdateView.as_view(), name="profile-photo"),
 ]
 
 

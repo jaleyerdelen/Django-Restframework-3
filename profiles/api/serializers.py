@@ -10,8 +10,9 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 class ProfilePhotoSerializer(serializers.ModelSerializer):
-    model = Profile
-    fields = ["photo"]
+    class Meta:
+        model = Profile
+        fields = ["photo"]
 
 class ProfileStatusSerializer(serializers.ModelSerializer):
     user_profile = serializers.StringRelatedField(read_only=True)
